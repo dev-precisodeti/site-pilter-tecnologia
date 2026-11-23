@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Página Principal — Pilter Tecnologia LTDA -->
+  <url>
+    <loc>https://pilter.com.br/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Portfólio de Serviços -->
+  <url>
+    <loc>https://pilter.com.br/#servicos</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Link de Internet Dedicado -->
+  <url>
+    <loc>https://pilter.com.br/#servico-link</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Link de Internet Semidedicado -->
+  <url>
+    <loc>https://pilter.com.br/#servico-semidedicado</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Conexão via Satélite -->
+  <url>
+    <loc>https://pilter.com.br/#servico-satelite</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Suporte de TI -->
+  <url>
+    <loc>https://pilter.com.br/#servico-ti</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- CFTV Empresas e Shoppings -->
+  <url>
+    <loc>https://pilter.com.br/#servico-cftv</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Dimensionador de Projetos -->
+  <url>
+    <loc>https://pilter.com.br/#simulador</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Central Financeira — 2ª Via de Fatura -->
+  <url>
+    <loc>https://pilter.com.br/#segunda-via</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Contato & Orçamento via WhatsApp -->
+  <url>
+    <loc>https://pilter.com.br/#contato</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+</urlset>

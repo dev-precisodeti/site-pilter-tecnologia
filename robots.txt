@@ -1,0 +1,6 @@
+# robots.txt — Pilter Tecnologia LTDA (CNPJ 11.040.665/0001-45)
+User-agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: https://pilter.com.br/sitemap.xml
