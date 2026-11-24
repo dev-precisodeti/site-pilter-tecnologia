@@ -299,6 +299,10 @@ function initAsaasInvoicePortal() {
 
     try {
       const response = await fetch(`/api/faturas?q=${encodeURIComponent(rawQuery)}`);
+      const contentType = response.headers.get('content-type') || '';
+      if (!contentType.includes('application/json')) {
+        throw new Error('STATIC_HOST_FALLBACK');
+      }
       const data = await response.json();
 
       if (!response.ok || !data.ok) {
@@ -386,16 +390,32 @@ function initAsaasInvoicePortal() {
         <div class="invoice-list">${itemsHtml}</div>
       `;
     } catch (err) {
-      resultsArea.innerHTML = `
-        <div class="invoice-error-box">
-          <strong style="display: block; margin-bottom: 6px;">Aviso na consulta automática</strong>
-          <p style="font-size: 0.9rem; margin-bottom: 14px;">${escapeHtml(err.message)}</p>
-          <a href="https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá, Pilter Tecnologia! Preciso retirar a 2ª via de fatura para: ' + rawQuery)}"
-             target="_blank" rel="noopener" class="btn btn-dark btn-sm">
-            <span>Retirar 2ª Via pelo WhatsApp</span>
-          </a>
-        </div>
-      `;
+      const isStaticFallback = err.message === 'STATIC_HOST_FALLBACK' || err.name === 'SyntaxError';
+      if (isStaticFallback) {
+        resultsArea.innerHTML = `
+          <div class="invoice-empty">
+            <h4 style="font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 6px;">Atendimento Rápido de 2ª Via — Pilter Tecnologia</h4>
+            <p style="color: var(--ink-secondary); font-size: 0.92rem; margin-bottom: 16px;">
+              Identificamos sua solicitação para <strong>"${escapeHtml(rawQuery)}"</strong>. Clique no botão abaixo para receber seu Boleto ou código Pix atualizado imediatamente pelo nosso WhatsApp Financeiro:
+            </p>
+            <a href="https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá, Financeiro da Pilter Tecnologia! Gostaria de receber a 2ª via de fatura (Boleto/Pix) para o CPF/CNPJ ou Empresa: ' + rawQuery)}"
+               target="_blank" rel="noopener" class="btn btn-dark btn-sm">
+              <span>Receber 2ª Via Agora no WhatsApp</span>
+            </a>
+          </div>
+        `;
+      } else {
+        resultsArea.innerHTML = `
+          <div class="invoice-error-box">
+            <strong style="display: block; margin-bottom: 6px;">Aviso na consulta automática</strong>
+            <p style="font-size: 0.9rem; margin-bottom: 14px;">${escapeHtml(err.message)}</p>
+            <a href="https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá, Pilter Tecnologia! Preciso retirar a 2ª via de fatura para: ' + rawQuery)}"
+               target="_blank" rel="noopener" class="btn btn-dark btn-sm">
+              <span>Retirar 2ª Via pelo WhatsApp</span>
+            </a>
+          </div>
+        `;
+      }
     } finally {
       if (submitBtn) {
         submitBtn.disabled = false;
